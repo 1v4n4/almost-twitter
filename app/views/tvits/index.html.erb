@@ -1,27 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Tvits</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Tvit</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tvits.each do |tvit| %>
-      <tr>
-        <td><%= tvit.tvit %></td>
-        <td><%= link_to 'Show', tvit %></td>
-        <td><%= link_to 'Edit', edit_tvit_path(tvit) %></td>
-        <td><%= link_to 'Destroy', tvit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Tvit', new_tvit_path %>
+<div class="container mt-5">
+     <div class="float-start">
+        <%= render 'tvits/trends'%>
+      </div>
+      <div class="float-start">
+        <%= render 'tvits/profile'%>
+      </div>
+     
+     <div class="float-center">
+        <%= render 'tvits/feed'%>
+      </div>
+      <div class="float-end me-5">
+        <%= render 'follow' %>
+        </div>
+</div>

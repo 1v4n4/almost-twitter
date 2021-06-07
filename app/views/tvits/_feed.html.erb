@@ -1,0 +1,62 @@
+<div>
+   
+    <div class="d-flex">
+    
+        <div class="card col-6" style="width: 36rem;">
+          <% @tvits.each do |tvit| %>
+
+            <div  style="width: 36rem;">
+              <div class="column g-0 d-flex">
+                <div class="col-md-4 float-start">
+                    <img src="https://i.pinimg.com/originals/9f/7f/87/9f7f876e7fbd24a6cf76e51b8c1109f5.jpg" class="round-img" alt="tvit-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Wile E. Coyote</h5> 
+                      <p class="card-text"><small class="text-muted">@coyote</small></p>
+                      <p class="card-text"><%= tvit.tvit %></p>
+                      <%= link_to tvit do %>
+                        <span class="icon"><i class="fa fa-link" aria-hidden="true"></i></span> 
+                      <% end %>
+                      <%= link_to edit_tvit_path(tvit) do %> 					
+                        <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span> 
+                      <% end %>		
+                      <%= link_to tvit, method: :delete, data: { confirm: 'Are you sure?' } do %>			
+                        <span class="icon"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      
+      
+    </div>
+    <div class="d-flex">
+    
+        <div class="card col-6" style="width: 36rem;">
+          <% @tvits.each do |tvit| %>
+
+            <div  style="width: 36rem;">
+              <div class="column g-0 d-flex">
+                <div class="col-md-4 float-start">
+                    <img src="https://i.pinimg.com/originals/9f/7f/87/9f7f876e7fbd24a6cf76e51b8c1109f5.jpg" class="round-img" alt="tvit-img">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Tweet about it</h5> 
+                       <%= render 'form' %> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      
+      
+    </div>
+    
+</div>

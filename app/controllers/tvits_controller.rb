@@ -4,6 +4,7 @@ class TvitsController < ApplicationController
   # GET /tvits or /tvits.json
   def index
     @tvits = Tvit.all
+    @tvit = Tvit.new
   end
 
   # GET /tvits/1 or /tvits/1.json

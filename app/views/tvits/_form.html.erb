@@ -1,5 +1,6 @@
-<%= form_with(model: tvit) do |form| %>
-  <% if tvit.errors.any? %>
+
+ <%= form_with(model: @tvit) do |form| %>
+  <% if @tvit.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(tvit.errors.count, "error") %> prohibited this tvit from being saved:</h2>
 
@@ -12,8 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :tvit %>
-    <%= form.text_area :tvit %>
+    <%= form.text_area :tvit, class: "form-control" %>
   </div>
 
   <div class="actions">
