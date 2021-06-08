@@ -1,7 +1,15 @@
+<div class="container col-3 m-auto mt-5">
+
 <h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
+  <%= f.input :name,
+                required: true,                
+                input_html: { autocomplete: "name" } %>                
+  <%= f.input :username,
+                required: true,                 
+                input_html: { autocomplete: "username" } %>
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -13,8 +21,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class:"btn btn-primary my-3" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

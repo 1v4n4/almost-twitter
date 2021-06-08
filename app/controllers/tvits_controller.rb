@@ -1,10 +1,12 @@
 class TvitsController < ApplicationController
-  before_action :set_tvit, only: %i[ show edit update destroy ]
-
+  before_action :set_tvit, only: %i[ show edit update destroy ]  
+  before_action :authenticate_user!, except: [:index, :show]
+  
   # GET /tvits or /tvits.json
   def index
     @tvits = Tvit.all.order("created_at DESC")
     @tvit = Tvit.new
+    #@tvit = current_user.tvits.build
   end
 
   # GET /tvits/1 or /tvits/1.json
@@ -13,7 +15,8 @@ class TvitsController < ApplicationController
 
   # GET /tvits/new
   def new
-    @tvit = Tvit.new
+    #@tvit = Tvit.new
+    @tvit = current_user.tvits.build
   end
 
   # GET /tvits/1/edit
@@ -22,8 +25,8 @@ class TvitsController < ApplicationController
 
   # POST /tvits or /tvits.json
   def create
-    @tvit = Tvit.new(tvit_params)
-
+    #@tvit = Tvit.new(tvit_params)
+    @tvit = current_user.tvits.build(tvit_params)
     respond_to do |format|
       if @tvit.save
         format.html { redirect_to root_path, notice: "Tvit was successfully created." }
