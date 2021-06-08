@@ -22,6 +22,8 @@
               <h5 class="card-title"><%= tvit.user.name %></h5> 
               <p class="card-text"><small class="text-muted"><%= tvit.user.username %></small></p>
               <p class="card-text"><%= tvit.tvit %></p>
+              <% if current_user == tvit.user %>
+             <%#<% if user_signed_in? %>
               <%= link_to tvit do %>
                 <span class="icon mx-3"><i class="fa fa-link" aria-hidden="true"></i></span> 
               <% end %>
@@ -31,6 +33,7 @@
               <%= link_to tvit, method: :delete, data: { confirm: 'Are you sure?' } do %>			
                 <span class="icon mx-3"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
               <% end %>
+              <%end%>
             </div>
           </div>
         </div>

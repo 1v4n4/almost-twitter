@@ -5,13 +5,13 @@
           <img src="https://i.pinimg.com/originals/9f/7f/87/9f7f876e7fbd24a6cf76e51b8c1109f5.jpg" class="" alt="tviter-img">
           <div class="card-body">    
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>    
+                <li class="list-group-item"><%= current_user.name %></li>
+                <li class="list-group-item"><%= current_user.username %></li>
+                <li class="list-group-item">Tvits: <%= current_user.tvits.count %></li>    
               </ul>
               <div class="card-body">
-                <a href="#" class="card-link">Link</a>
-                <a href="#" class="card-link">Link</a>
-                <a href="#" class="card-link">Link</a>
+                <%= link_to "Edit profile", edit_user_registration_path, class:"me-3" %>
+                <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
               </div>
           </div>
         </div>
