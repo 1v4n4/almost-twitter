@@ -9,6 +9,7 @@ class TvitsController < ApplicationController
     @tvits = Tvit.all.order('created_at DESC')
     @tvit = Tvit.new
     # @tvit = current_user.tvits.build
+    @users = User.all
   end
 
   # GET /tvits/1 or /tvits/1.json
