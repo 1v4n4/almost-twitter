@@ -1,1 +1,1 @@
-json.array! @tvits, partial: "tvits/tvit", as: :tvit
+json.array! @tvits, partial: 'tvits/tvit', as: :tvit

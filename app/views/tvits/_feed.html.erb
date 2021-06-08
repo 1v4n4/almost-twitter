@@ -1,4 +1,6 @@
 <div>
+
+<% if user_signed_in? %>
   <div class="card col-5" style="width: 36rem;">
     <div class="column g-0 d-flex">
       <div class=" float-start m-3">
@@ -9,7 +11,8 @@
         <%= render 'form' %> 
       </div>         
     </div>
-  </div>    
+  </div> 
+ <%end%>   
   <% @tvits.each do |tvit| %>
     <div class="card col-5" style="width: 36rem;">
       <div  style="width: 20rem;">
@@ -22,7 +25,7 @@
               <h5 class="card-title"><%= tvit.user.name %></h5> 
               <p class="card-text"><small class="text-muted"><%= tvit.user.username %></small></p>
               <p class="card-text"><%= tvit.tvit %></p>
-              <% if current_user == tvit.user %>
+             <% if current_user == tvit.user %>
              <%#<% if user_signed_in? %>
               <%= link_to tvit do %>
                 <span class="icon mx-3"><i class="fa fa-link" aria-hidden="true"></i></span> 

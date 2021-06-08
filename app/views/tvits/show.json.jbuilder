@@ -1,1 +1,1 @@
-json.partial! "tvits/tvit", tvit: @tvit
+json.partial! 'tvits/tvit', tvit: @tvit
