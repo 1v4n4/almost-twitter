@@ -3,7 +3,7 @@ class TvitsController < ApplicationController
 
   # GET /tvits or /tvits.json
   def index
-    @tvits = Tvit.all
+    @tvits = Tvit.all.order("created_at DESC")
     @tvit = Tvit.new
   end
 
@@ -26,7 +26,7 @@ class TvitsController < ApplicationController
 
     respond_to do |format|
       if @tvit.save
-        format.html { redirect_to @tvit, notice: "Tvit was successfully created." }
+        format.html { redirect_to root_path, notice: "Tvit was successfully created." }
         format.json { render :show, status: :created, location: @tvit }
       else
         format.html { render :new, status: :unprocessable_entity }

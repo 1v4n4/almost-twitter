@@ -1,15 +1,8 @@
-<div class="container mt-5">
-     <div class="float-start">
-        <%= render 'tvits/trends'%>
-      </div>
-      <div class="float-start">
-        <%= render 'tvits/profile'%>
-      </div>
-     
-     <div class="float-center">
-        <%= render 'tvits/feed'%>
-      </div>
-      <div class="float-end me-5">
-        <%= render 'follow' %>
-        </div>
+<div class="d-flex justify-content-around m-5">
+  <%= render 'tvits/trends' %>
+  <%= render 'tvits/profile' %> 
+  <%= render 'tvits/feed' %>
+  <%= render 'follow' %>  
 </div>
+
+
