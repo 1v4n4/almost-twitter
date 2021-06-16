@@ -1,0 +1,22 @@
+
+ <%= form_with(model: @tvit) do |form| %>
+  <% if @tvit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tvit.errors.count, "error") %> prohibited this tvit from being saved:</h2>
+
+      <ul>
+        <% tvit.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field my-3">
+    <%= form.text_area :tvit, class: "form-control" %>
+  </div>
+
+  <div class="actions my-3">
+    <%= form.submit %>
+  </div>
+<% end %>

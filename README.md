@@ -1,24 +1,46 @@
-# README
+# Twitter clone, Ruby on Rails project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Twitter clone, the project based on Odin and Web-Crunch Ruby on Rails curriculum, enables users to sign in/ sign up and then create tweets. Users can see all posts but they can edit only posts they created. Also, they can edit only their account information and passwords. 
+Guests who aren't logged in can see only a list of posts and list other users of Twitter clone. The focus is on functionality, and that's why the layout is very basic. Gem Devise is used for user authentication.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Rails
+- SQLite3
+- Node.js
+- Yarn
+- Bootstrap
 
-* System dependencies
+## Getting Started
+### To get a local copy run the following steps:
 
-* Configuration
+- [Copy this link](git@github.com:1v4n4/twitter-clone.git)
+- Open your terminal or command line
+- Run `git clone` and Paste the link
+- Open the folder with your code editor
+- Run `bundle install` to install all dependecies
+- Run `yarn install` to install yarn
+- Run `rails db:migrate` to create the database tables
+- Run `rails server` to open the local server
+- You can folow the nav links for loging in and creating posts
 
-* Database creation
+## Authors
 
-* Database initialization
+👤 **Ivana Novaković-Leković** 
 
-* How to run the test suite
+- GitHub: [@githubhandle](https://github.com/1v4n4)
+- Twitter: [@twitterhandle](https://twitter.com/codeIv1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/1v4n4/)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## 🤝 Contributing
 
-* ...
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/1v4n4/twitter-clone/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+

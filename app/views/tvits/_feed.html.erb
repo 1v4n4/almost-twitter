@@ -1,0 +1,49 @@
+<div>
+
+<% if user_signed_in? %>
+  <div class="card col-5" style="width: 36rem;">
+    <div class="column g-0 d-flex">
+      <div class=" float-start m-3">
+        <img src="https://i.pinimg.com/originals/9f/7f/87/9f7f876e7fbd24a6cf76e51b8c1109f5.jpg" class="round-img" alt="tvit-img">
+      </div>
+      <div class="card-body ms-5">
+        <h5 class="card-title">Tvit about it</h5> 
+        <%= render 'form' %> 
+      </div>         
+    </div>
+  </div> 
+ <%end%>   
+  <% @tvits.each do |tvit| %>
+    <div class="card col-5" style="width: 36rem;">
+      <div  style="width: 20rem;">
+        <div class="column g-0 d-flex m-3">
+          <div class=" float-start">
+            <img src="https://i.pinimg.com/originals/9f/7f/87/9f7f876e7fbd24a6cf76e51b8c1109f5.jpg" class="round-img" alt="tvit-img"> 
+            <%# <% image_tag(tvit.user.profile_picture,class:"round-img") %>
+          </div>
+          <div class="col-md-8 ms-5">
+            <div class="card-body">
+              <h5 class="card-title"><%= tvit.user.name %></h5> 
+              <p class="card-text"><small class="text-muted"><%= tvit.user.username %></small></p>
+              <p class="card-text"><%= tvit.tvit %></p>
+             <% if current_user == tvit.user %>
+              <%= link_to tvit do %>
+                <span class="icon mx-3"><i class="fa fa-link" aria-hidden="true"></i></span> 
+              <% end %>
+              <%= link_to edit_tvit_path(tvit) do %> 					
+                <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span> 
+              <% end %>		
+              <%= link_to tvit, method: :delete, data: { confirm: 'Are you sure?' } do %>			
+                <span class="icon mx-3"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+              <% end %>
+              <%end%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>     
+</div>
+
+
+ 
