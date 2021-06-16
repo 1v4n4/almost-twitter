@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Please do not make direct changes to this file!
 # This generator is maintained by the community around simple_form-bootstrap:
 # https://github.com/rafaelfranca/simple_form-bootstrap
@@ -13,6 +11,10 @@
 # Dir[Rails.root.join('lib/components/**/*.rb')].each { |f| require f }
 
 # Use this setup block to configure all options available in SimpleForm.
+
+# rubocop: disable Layout/LineLength
+# rubocop: disable Metrics/BlockLength
+
 SimpleForm.setup do |config|
   # Default class for buttons
   config.button_class = 'btn'
@@ -455,3 +457,5 @@ SimpleForm.setup do |config|
   #   time:          :custom_multi_select
   # }
 end
+# rubocop: enable Layout/LineLength
+# rubocop: enable Metrics/BlockLength

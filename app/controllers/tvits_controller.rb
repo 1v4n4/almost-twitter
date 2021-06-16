@@ -1,8 +1,8 @@
 class TvitsController < ApplicationController
   before_action :set_tvit, only: %i[show edit update destroy]
   before_action :authenticate_user!, except: %i[index show]
-   #to prevent user to edit other user's posts
-   before_action :correct_user, only: [:edit, :update, :destroy]
+  # to prevent user to edit other user's posts
+  before_action :correct_user, only: %i[edit update destroy]
 
   # GET /tvits or /tvits.json
   def index
@@ -60,11 +60,11 @@ class TvitsController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
-  #to prevent user to edit other user's posts
+
+  # to prevent user to edit other user's posts
   def correct_user
     @tvit = current_user.tvits.find_by(id: params[:id])
-    redirect_to root_path, notice: "Not autorized for that action" if @tvit.nil?
+    redirect_to root_path, notice: 'Not autorized for that action' if @tvit.nil?
   end
 
   private
