@@ -14,14 +14,14 @@
  *= require_self
  */
 
- .round-img {
-   height: 100px;
-   width: 100px;
-   border-radius: 50%;
- }
- 
- .round-img-sm {
-   height: 50px;
-   width: 50px;
-   border-radius: 50%;
- }
+  .round-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+   
+  .round-img-sm {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
