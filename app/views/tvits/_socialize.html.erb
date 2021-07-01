@@ -1,0 +1,35 @@
+<div class="card col-3" style="width: 20rem;">
+<h3 class=" m-3">Socialize</h3>
+<% @users.each do |user| %>
+    <div class="col-3 border-top-3 border-info" style="width: 20 rem;">
+      <div  style="width: 20rem;">
+        <div class="column g-0 d-flex">
+          <div class=" float-start">
+            <img src="https://i.pinimg.com/originals/9f/7f/87/9f7f876e7fbd24a6cf76e51b8c1109f5.jpg" class="round-img-sm m-3" alt="tvit-img">
+          </div>
+          <div class="col-md-8 ms-2">
+            <div class="card-body">
+              <h5 class="card-title"><%= user.name %></h5>
+              <p class="card-text"><small class="text-muted"><%= user.username %></small></p>
+              <%#<%= button_to friendships_path, {:controller => "friendships", :action => "create", :friend_id => user.id}, :method=>:post do %>
+               <%#<span class="icon mx-3"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+              <%#<% end %>
+              <% if current_user %>
+                <% if friendship_exists?(current_user.id, user.id) %>
+                  <p>Friends</p>
+                <% elsif respond?(current_user.id, user.id) %>
+                      <p> Respond to friend request</p>
+                <% elsif sent_request?(current_user.id, user.id)%>
+                    <p> Friend request sent</p>
+                <% else %>
+                  <%= button_to 'Add friend', {:controller => "friendships", :action => "create", :friend_id => user.id} , :method=>:post  %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+

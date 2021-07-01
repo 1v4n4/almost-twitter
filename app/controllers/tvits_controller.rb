@@ -10,6 +10,7 @@ class TvitsController < ApplicationController
     @tvit = Tvit.new
     # @tvit = current_user.tvits.build
     @users = User.all
+
   end
 
   # GET /tvits/1 or /tvits/1.json
