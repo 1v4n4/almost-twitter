@@ -1,0 +1,4 @@
+<% @users_tvits.each do |tvit|%>
+<%= tvit.tvit %>
+<p class="">Exists: <%= time_ago_in_words tvit.created_at %></p>
+<%end%>

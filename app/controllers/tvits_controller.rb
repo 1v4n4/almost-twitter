@@ -6,11 +6,10 @@ class TvitsController < ApplicationController
 
   # GET /tvits or /tvits.json
   def index
-    @tvits = Tvit.all.order('created_at DESC')
+    @tvits = Tvit.all.latest
     @tvit = Tvit.new
     # @tvit = current_user.tvits.build
     @users = User.all
-
   end
 
   # GET /tvits/1 or /tvits/1.json

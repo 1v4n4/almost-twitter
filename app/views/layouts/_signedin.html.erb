@@ -6,5 +6,8 @@
     <%= link_to "#{current_user.name}'s profile", edit_user_registration_path, class: "nav-link active text-white" %>
   </li>
   <li class="nav-item mx-3">
-    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link active text-white" %>
+    <%= link_to "#{current_user.name}'s tvits", users_tvits_path(:id), class: "nav-link active text-white" %>
+  </li>
+  <li class="nav-item mx-sm-3 mx-lg-5">
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "fw-bold nav-link active text-white" %>
   </li>
