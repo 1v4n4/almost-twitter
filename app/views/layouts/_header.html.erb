@@ -6,12 +6,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-         <%= nav_links %>
-      </ul>
-      <form class="d-flex">
-        <button class="btn btn-outline-success text-white bg-light mx-3" type="submit"><%= link_to "New tvit",new_tvit_path, class: "text-info" %></button>
-      </form>
+
+         <%= signed_links %>
+
+          <%= signed_or_not %>
     </div>
   </div>
 </nav>

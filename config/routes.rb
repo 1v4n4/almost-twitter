@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :friendships, only: [:create, :destroy, :update]
+  resources :friendships
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :tvits
 
