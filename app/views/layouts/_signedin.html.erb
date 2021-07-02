@@ -1,0 +1,10 @@
+<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+  <li class="nav-item mx-3">
+    <%= link_to "#{current_user.name}'s social activities", friendships_path, class: "nav-link active text-white" %>
+  </li>
+    <%= link_to "#{current_user.name}'s profile", edit_user_registration_path, class: "nav-link active text-white" %>
+  </li>
+  <li class="nav-item mx-3">
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link active text-white" %>
+  </li>
+</ul>
