@@ -1,29 +1,15 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
   <div class="container-fluid mx-5 my-2">
-    <%= link_to 'Tviter', root_path, class:"navbar-brand text-white mx-3" %>
-    
-      <div class="d-flex">
-        <button class="btn btn-outline-success text-white bg-light mx-3" type="submit"><%= link_to "New tvit",new_tvit_path, class: "text-info" %></button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          
-          <% if user_signed_in? %>
-            <li class="nav-item mx-3">
-                <%= link_to current_user.name, edit_user_registration_path, class: "nav-link active text-white" %>
-            </li>          
-            <li class="nav-item mx-3">
-                <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "nav-link active text-white" %>
-            </li>
-          <% else %> 
-            <li class="nav-item mx-3">
-                <%= link_to 'Log In', new_user_session_path, class: "nav-link active text-white" %>
-            </li>
-            <li class="nav-item mx-3">
-                <%= link_to 'Sign Up', new_user_registration_path, class: "nav-link active text-white" %>
-            </li>
-          <% end %>
-          </ul>
-        </div>
-      </div>
+    <%= link_to 'Tviter', root_path, class:"fs-4 fw-bold navbar-brand text-white mx-3" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+         <%= signed_links %>
+
+          <%= signed_or_not %>
+    </div>
   </div>
 </nav>

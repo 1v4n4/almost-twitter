@@ -1,0 +1,72 @@
+<div class="container col-4  mt-2">
+<div class="d-flex justify-content-center gap-5 my-3">
+<div>
+<h2>Friends</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @confirmed.each do |friend| %>
+      <tr>
+        <td class="col-2"><%= friend.user.name %><%= friend.friend.name %></td>
+        <%#<td><%= link_to 'Remove', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+<div>
+<h2 class="text-center">Friends requests</h2>
+
+<h4>Received requests</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @received.each do |friendship| %>
+      <tr>
+        <td class="col-2"><%= friendship.user.name %></td>
+        <td><%= link_to 'Deny', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Accept', edit_friendship_path(friendship) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h4>Sent requests</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sent.each do |friendship| %>
+      <tr>
+        <td class="col-2"><%=friendship.friend.name %></td>
+        <td><%= link_to 'Delete', friendship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+
